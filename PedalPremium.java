@@ -12,7 +12,7 @@ public class PedalPremium extends UrbanBike {
 	@Override
 	protected double pedalar(double pedalar) {
 		if(carteira == 0) {
-			System.out.println("Na proxima pedala voce usara seus creditos premium...");
+			System.out.println("Na proxima pedalada voce usara seus creditos premium...");
 			carteira = carteira - pedalar;
 		}
 		if(carteira == limite) {
