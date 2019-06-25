@@ -11,9 +11,4 @@ public abstract class UrbanBike {
 	
 	//Recarrega creditos
 	protected abstract double creditar(double creditar);
-	
-	protected void addCreditos(double credito) {
-		this.addCredito = credito;
-	}
-	
 }
