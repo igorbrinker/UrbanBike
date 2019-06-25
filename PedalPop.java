@@ -6,6 +6,7 @@ public class PedalPop extends UrbanBike{
 	
 	@Override
 	protected double creditar(double creditar) {
+		this.addCredito = creditar;
 		carteira = (carteira + creditar) - (creditar * taxa);
 		if(creditar >= 100) {
 			System.out.println("Parabens, voce agora eh premium!");
