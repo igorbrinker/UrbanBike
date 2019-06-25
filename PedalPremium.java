@@ -1,7 +1,12 @@
 package br.unilasalle;
 
-public class PedalPremium extends UrbanBike {
+public class PedalPremium extends UrbanBike implements Imprimivel{
 	private double limite;
+	
+	
+	protected double getLimite() {
+		return limite;
+	}
 	
 	@Override
 	protected double creditar(double creditar) {
@@ -20,5 +25,14 @@ public class PedalPremium extends UrbanBike {
 		}else carteira = carteira - pedalar;
 		
 		return carteira;
+	}
+
+	public void mostraDados() {
+		if(premium != false) {
+			System.out.println("ID: " + getNumeroConta() + ".");
+			System.out.println("Saldo: R$" + getCarteira() + ".");
+			System.out.println("Limite: R$" + getLimite() + ".");
+			System.out.println("Tipo de conta: Premium.");
+		}
 	}
 }
