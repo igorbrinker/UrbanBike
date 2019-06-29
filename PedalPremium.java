@@ -5,7 +5,7 @@ public class PedalPremium extends UrbanBike implements Imprimivel{
 	
 	
 	protected double getLimite() {
-		return limite;
+		return this.limite;
 	}
 	
 	@Override
@@ -28,7 +28,7 @@ public class PedalPremium extends UrbanBike implements Imprimivel{
 	}
 
 	public void mostraDados() {
-		if(premium != false) {
+		if(this.premium != false) {
 			System.out.println("ID: " + getNumeroConta() + ".");
 			System.out.println("Saldo: R$" + getCarteira() + ".");
 			System.out.println("Limite: R$" + getLimite() + ".");
