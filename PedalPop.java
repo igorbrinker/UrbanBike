@@ -8,9 +8,9 @@ public class PedalPop extends UrbanBike implements Imprimivel{
 	protected double creditar(double creditar) {
 		this.addCredito = creditar;
 		
-		if(carteira < creditar + (creditar * taxa)) {
+		if(carteira < creditar + (creditar * this.taxa)) {
 			System.out.println("Valor creditado insuficiente! Favor, colocar mais creditos...");
-		}else carteira = (carteira + creditar) - (creditar * taxa);
+		}else carteira = (carteira + creditar) - (creditar * this.taxa);
 		
 		if(creditar >= 100) {
 			System.out.println("Parabens, voce agora eh premium!");
@@ -24,18 +24,18 @@ public class PedalPop extends UrbanBike implements Imprimivel{
 	protected double pedalar(double pedalar) {
 		this.km = pedalar;
 		if(premium != true){
-			if(carteira < pedalar + (pedalar * taxa)) {
+			if(carteira < pedalar + (pedalar * this.taxa)) {
 				System.out.println("Valor creditado insuficiente! Favor, colocar mais creditos...");
-			}else carteira = carteira - (pedalar + (pedalar * taxa));
+			}else carteira = carteira - (pedalar + (pedalar * this.taxa));
 		}
 		return carteira;
 	}
 	
 	protected void setTaxa(double tax) {
 		this.taxa = tax;
-		taxa = taxa/100;
-		aux = taxa;
-		System.out.println("Voce aplicou uma taxa de " + aux *100 + "%, sobre compras e vendas!");
+		this.taxa = this.taxa/100;
+		this.aux = this.taxa;
+		System.out.println("Voce aplicou uma taxa de " + this.aux *100 + "%, sobre compras e vendas!");
 	}
 
 	public void mostraDados() {
