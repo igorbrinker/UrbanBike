@@ -1,22 +1,54 @@
 package br.unilasalle;
 
-public abstract class UrbanBike {
+import java.util.ArrayList;
+
+public abstract class UrbanBike extends Menu {
 	protected int numeroDaConta;
+	protected int numeroOrigem;
+	protected int numeroDestino;
 	protected double carteira;
 	protected boolean premium;
 	protected double addCredito;
 	protected double km;
 	
-	protected int getNumeroConta() {
-		return numeroDaConta;
+	public int getNumeroConta() {
+		return this.numeroDaConta;
 	}
 	
-	protected double getCarteira() {
-		return carteira;
+	public void setNumeroConta(int numConta) {
+		this.numeroDaConta = numConta;
 	}
 	
-	protected boolean getPremium() {
-		return premium;
+	public void setCarteira(double dinheiro) {
+		this.carteira = dinheiro;
+	}
+	
+	public double getCarteira() {
+		return this.carteira;
+	}
+	
+	public void setPremium(boolean premium) {
+		this.premium = premium;
+	}
+	
+	public boolean getPremium() {
+		return this.premium;
+	}
+	
+	public void setCredito(double credito) {
+		this.addCredito = credito;
+	}
+	
+	public double getCredito() {
+		return this.addCredito;
+	}
+	
+	public void setKm(int distancia) {
+		this.km = distancia;
+	}
+	
+	public double getKm() {
+		return this.km;
 	}
 	
 	//Gasta creditos
@@ -24,5 +56,10 @@ public abstract class UrbanBike {
 	
 	//Recarrega creditos
 	protected abstract double creditar(double creditar);
+	
+	public void transferir(int o, int d) {
+		this.numeroOrigem = o;
+		this.numeroDestino = d;
+	}
 	
 }
